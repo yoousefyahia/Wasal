@@ -202,6 +202,19 @@ yarn dev
 
 ---
 
+## 🔗 **Repository Links**
+
+### **Frontend Repository**
+- **Current Repository**: This repository contains the frontend application built with Next.js
+
+### **Backend Repository**
+- **Backend API**: [https://github.com/Omar113650/wasal](https://github.com/Omar113650/wasal)
+  - Contains the backend API built with Node.js/Express
+  - Includes Controllers, Middleware, Routes, Models, and Validation
+  - Built with JavaScript (100%)
+
+---
+
 ## 🛠️ **Technologies & Tools**
 
 ### **Frontend Technologies**
@@ -354,15 +367,6 @@ NEXT_PUBLIC_APP_NAME=Wasal
 ```
 
 ---
-
-## 🤝 Contributing
-
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
 
 ### Code Standards
 - Follow React best practices

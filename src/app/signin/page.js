@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function SignIn() {
   return (
     <div className="min-h-screen flex">
-      {/* Left Panel */}
-      <div className="w-1/2 bg-[#1E3A8A] relative flex items-center justify-center">
+      {/* Left Panel - Hidden on mobile */}
+      <div className="hidden md:flex w-1/2 bg-[#1E3A8A] relative items-center justify-center">
         <div className="text-center z-10">
           <h1 className="text-6xl font-bold text-white mb-8">Wasal</h1>
         </div>
@@ -123,23 +123,23 @@ export default function SignIn() {
       </div>
 
       {/* Right Panel - Sign In Form */}
-      <div className="w-1/2 bg-gray-50 flex items-center justify-center p-8">
-        <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
+      <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+        <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8 w-full max-w-md">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
               Welcome Back to <span className="text-[#1E3A8A]">Wasal</span>
             </h1>
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               Sign in to your account to continue
             </p>
           </div>
 
           {/* Sign In Form */}
-          <form className="space-y-6">
+          <form className="space-y-4 sm:space-y-6">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                 Email Address
               </label>
               <input
@@ -147,14 +147,14 @@ export default function SignIn() {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#448AB1] focus:border-transparent transition-colors"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#448AB1] focus:border-transparent transition-colors"
                 placeholder="Enter your email"
               />
             </div>
 
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                 Password
               </label>
               <input
@@ -162,13 +162,13 @@ export default function SignIn() {
                 id="password"
                 name="password"
                 required
-                className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#448AB1] focus:border-transparent transition-colors"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#448AB1] focus:border-transparent transition-colors"
                 placeholder="Enter your password"
               />
             </div>
 
             {/* Remember Me & Forgot Password */}
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center justify-between text-xs sm:text-sm">
               <div className="flex items-center">
                 <input
                   type="checkbox"
@@ -191,7 +191,7 @@ export default function SignIn() {
             {/* Sign In Button */}
             <button
               type="submit"
-              className="w-full bg-[#448AB1] text-white py-3 px-4 rounded-lg font-medium hover:opacity-90 transition-colors focus:ring-2 focus:ring-[#448AB1] focus:ring-offset-2"
+              className="w-full bg-[#448AB1] text-white py-2 sm:py-3 px-4 rounded-lg text-sm sm:text-base font-medium hover:opacity-90 transition-colors focus:ring-2 focus:ring-[#448AB1] focus:ring-offset-2"
             >
               Sign In
             </button>

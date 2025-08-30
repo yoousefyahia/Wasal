@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function SignUp() {
   return (
     <div className="min-h-screen flex">
-      {/* Left Panel  */}
-      <div className="w-1/2 bg-[#1E3A8A] relative flex items-center justify-center">
+      {/* Left Panel - Hidden on mobile */}
+      <div className="hidden md:flex w-1/2 bg-[#1E3A8A] relative items-center justify-center">
         <div className="text-center z-10">
           <h1 className="text-6xl font-bold text-white mb-8">Wasal</h1>
         </div>
@@ -123,14 +123,14 @@ export default function SignUp() {
       </div>
 
       {/* Right Panel - Sign Up Form */}
-      <div className="w-1/2 bg-gray-50 flex items-center justify-center p-8">
-        <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
+      <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+        <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8 w-full max-w-md">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
               Welcome to <span className="text-[#1E3A8A]">Wasal</span>
             </h1>
-            <h2 className="text-2xl font-bold text-gray-800">Sign up</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Sign up</h2>
           </div>
 
           {/* Sign Up Form */}

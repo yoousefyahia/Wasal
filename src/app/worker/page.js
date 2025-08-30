@@ -28,9 +28,9 @@ export default function Worker() {
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left Sidebar Navigation */}
-      <div className="w-64 bg-gray-800 text-white">
+    <div className="min-h-screen flex flex-col lg:flex-row">
+      {/* Left Sidebar Navigation - Hidden on mobile */}
+      <div className="hidden lg:flex w-full lg:w-64 bg-gray-800 text-white">
         <div className="p-6">
           <h2 className="text-xl font-bold text-white mb-8">Dashboard</h2>
           
@@ -74,7 +74,7 @@ export default function Worker() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 bg-white p-8">
+      <div className="flex-1 bg-white p-4 lg:p-8">
         {/* Page Title */}
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Application Form</h1>
 

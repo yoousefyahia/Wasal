@@ -18,6 +18,7 @@ export default function Factory() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [appliedSearchFilters, setAppliedSearchFilters] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
 
   const products = [
     {
@@ -366,14 +367,14 @@ export default function Factory() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center py-4 space-y-4 sm:space-y-0">
             {/* Brand */}
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-blue-900">Wasal</h1>
             </div>
             
             {/* Navigation */}
-            <nav className="flex space-x-8">
+            <nav className="flex flex-wrap justify-center sm:justify-end space-x-4 sm:space-x-8">
               <Link href="/" className="text-blue-900 border-b-2 border-blue-900 pb-1 font-medium">
                 Home
               </Link>
@@ -418,9 +419,22 @@ export default function Factory() {
         </div>
       </header>
 
-      <div className="flex">
-        {/* Left Sidebar - Filters */}
-        <div className="w-80 bg-white shadow-sm p-6">
+      <div className="flex flex-col lg:flex-row">
+        {/* Mobile Filter Toggle Button */}
+        <div className="lg:hidden p-4">
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className="w-full bg-[#448AB1CC] text-white py-2 px-4 rounded-lg flex items-center justify-center space-x-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z" />
+            </svg>
+            <span>{showFilters ? 'Hide Filters' : 'Show Filters'}</span>
+          </button>
+        </div>
+
+        {/* Left Sidebar - Filters - Hidden on mobile */}
+        <div className={`${showFilters ? 'block' : 'hidden'} lg:block w-full lg:w-80 bg-white shadow-sm p-6`}>
           <div className="mb-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">▼ Filters</h2>
             
@@ -530,7 +544,7 @@ export default function Factory() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-4 lg:p-6">
           {/* Breadcrumbs */}
           <div className="text-sm text-gray-500 mb-4">
             Home / Search / {appliedSearchFilters.length > 0 ? appliedSearchFilters.join(' / ') : 'All Products'}
@@ -554,7 +568,7 @@ export default function Factory() {
 
           {/* Products Grid */}
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
               {filteredProducts.map((product) => (
                 <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
                   {/* Product Image */}
